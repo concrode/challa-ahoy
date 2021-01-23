@@ -1,6 +1,6 @@
 /*global*/
 .container {
-	width:80%; 
+	width:50%; 
 	margin:auto; 
     overflow: hidden;
     /**background:burlywood;*/
@@ -21,6 +21,48 @@
     overflow: hidden;
     position: fixed;
     background-image: url(../../../assets/images/visitor-background.png);
+}
+
+.visitor-detail {
+	width:50%; 
+	margin:auto; 
+    overflow: hidden;
+    vertical-align:middle;
+    padding: 20px;
+    background-image: url(../../../assets/images/visitor-detail-background.png);
+}
+
+.form-prompt {
+    text-align: center; 
+    color: #ffffff;
+    font: normal normal normal 20px/24px Novecento wide;
+}
+
+.visitor-row {
+    height: 50px;   
+}
+
+
+#buttons {
+    margin-top:20px;
+    clear: both;
+}
+
+#buttons .backButton {
+    float:left;
+    text-align:center;
+    width: 35%;
+    padding:10px;
+    display:inline-block;
+}
+
+
+#buttons .nextButton {
+    float:right;
+    text-align:center;
+    width: 35%;
+    padding:10px;
+    display:inline-block;
 }
 
 #logo {
