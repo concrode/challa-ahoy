@@ -4,6 +4,7 @@ import {VisitorRegisterComponent} from './visitor/visitor-register/visitor-regis
 import {VisitorConfirmComponent} from './visitor/visitor-confirm/visitor-confirm.component';
 import {VisitorSubmitComponent} from './visitor/visitor-submit/visitor-submit.component';
 import { LoginComponent } from './admin/login/login.component';
+import { VisitorDataComponent} from './admin/visitor-data/visitor-data.component';
 
 
 
@@ -11,7 +12,8 @@ const routes: Routes = [
   {path: '', component: VisitorRegisterComponent },
   {path: 'confirm', component: VisitorConfirmComponent },
   {path: 'submit', component: VisitorSubmitComponent},
-  {path: 'login', component: LoginComponent}
+  {path: 'login', component: LoginComponent},
+  {path: 'visitorData', component: VisitorDataComponent}
 ];
 
 @NgModule({

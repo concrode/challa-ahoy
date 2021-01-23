@@ -10,6 +10,7 @@ import { VisitorConfirmComponent } from './visitor/visitor-confirm/visitor-confi
 import { VisitorSubmitComponent } from './visitor/visitor-submit/visitor-submit.component';
 import { HeaderComponent } from './admin/header/header.component';
 import { LoginComponent } from './admin/login/login.component';
+import { VisitorDataComponent } from './admin/visitor-data/visitor-data.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { LoginComponent } from './admin/login/login.component';
     VisitorConfirmComponent,
     VisitorSubmitComponent,
     HeaderComponent,
-    LoginComponent
+    LoginComponent,
+    VisitorDataComponent
   ],
   imports: [
     BrowserModule,
