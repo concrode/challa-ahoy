@@ -1,6 +1,5 @@
-import { Component, OnInit, EventEmitter, Output} from '@angular/core';
+import { Component, OnInit, NgZone} from '@angular/core';
 import { Router } from '@angular/router';
-
 
 @Component({
   selector: 'app-visitor-register',
@@ -8,8 +7,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./visitor-register.component.css']
 })
 export class VisitorRegisterComponent implements OnInit {
-  @Output() addVisitor: EventEmitter<any> = new EventEmitter();
-
   checkInTime:Date = new Date();
 
   firstName:string;
@@ -17,16 +14,21 @@ export class VisitorRegisterComponent implements OnInit {
   phoneNumber:string;
   email:string
 
-  constructor(private router: Router) { 
+
+  constructor(private router: Router,private ngZone: NgZone) { 
+
     setInterval(() => {
       this.checkInTime = new Date();
     }, 1);
   }
 
   ngOnInit(): void {
+    console.log("hello");
   }
 
   onSubmit() {
+    console.log("onsubmit");
+
     const visitor = {
         firstName: this.firstName,
         lastName: this.lastName,
@@ -38,7 +40,15 @@ export class VisitorRegisterComponent implements OnInit {
     console.log(visitor.firstName + visitor.lastName + visitor.phoneNumber + visitor.email + 
       visitor.checkInTime);
 
-   this.addVisitor.emit(visitor);
+
+   //this.visitorService.setVisitor(visitor);
+   console.log("======register:" + visitor.firstName);
+
+  //  this.ngZone.run(() => {
+  //   this.router.navigateByUrl('/facebook-analysis');
+  // })
+
+   this.router.navigateByUrl('confirm');
   }
 
 }

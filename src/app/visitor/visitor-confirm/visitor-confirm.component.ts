@@ -9,10 +9,15 @@ import { Visitor} from '../../shared/visitor.model';
 export class VisitorConfirmComponent implements OnInit {
 
   visitor: Visitor;
+  firstName:string;
 
   constructor() { }
 
   ngOnInit(): void {
+    //console.log("======= confirm:" + this.visitor.firstName);
+    // this.firstName = this.visitor.firstName;
+
+    // console.log("confirm:" + this.firstName);
   }
 
 }
