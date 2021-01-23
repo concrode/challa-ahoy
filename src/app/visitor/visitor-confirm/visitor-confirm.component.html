@@ -21,9 +21,9 @@
             <table style="text-align: center;">
                 <tr class="visitor-row">
                     <td><label class="form-prompt">First Name:</label></td>
-                    <td><label class="form-prompt">{{ firstName }}</label></td>
+                    <td><label class="form-prompt">{{ visitor.firstName }}</label></td>
                 </tr>
-                <!-- <tr class="visitor-row">
+                <tr class="visitor-row">
                     <td><label class="form-prompt">Last Name:</label></td>
                     <td><label class="form-prompt">{{ visitor.lastName }}</label></td>
                 </tr>
@@ -37,8 +37,8 @@
                 </tr>
                 <tr class="visitor-row">
                     <td><label class="form-prompt">Check In Time:</label></td>
-                    <td><label class="form-prompt">{{ visitor.firstName }}</label></td>
-                </tr> -->
+                    <td><label class="form-prompt">{{ visitor.checkInTime | date:'dd/MM/yyyy HH:mm:ss' }}</label></td>
+                </tr>
             </table>
         </div>
     </section>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Visitor} from '../../shared/visitor.model';
+import { VisitorService } from '../../shared/visitor.service';
 
 @Component({
   selector: 'app-visitor-confirm',
@@ -11,13 +12,12 @@ export class VisitorConfirmComponent implements OnInit {
   visitor: Visitor;
   firstName:string;
 
-  constructor() { }
+  constructor(private visitorService: VisitorService) { }
 
   ngOnInit(): void {
-    //console.log("======= confirm:" + this.visitor.firstName);
-    // this.firstName = this.visitor.firstName;
 
-    // console.log("confirm:" + this.firstName);
+    this.visitor = this.visitorService.getVisitor();
+    //console.log("======= confirm:" + this.visitor.firstName);
   }
 
 }

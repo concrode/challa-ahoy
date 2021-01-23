@@ -1,5 +1,6 @@
-import { Component, OnInit, NgZone} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
+import { VisitorService } from '../../shared/visitor.service';
 
 @Component({
   selector: 'app-visitor-register',
@@ -15,8 +16,7 @@ export class VisitorRegisterComponent implements OnInit {
   email:string
 
 
-  constructor(private router: Router,private ngZone: NgZone) { 
-
+  constructor(private router: Router, private visitorService: VisitorService ) { 
     setInterval(() => {
       this.checkInTime = new Date();
     }, 1);
@@ -37,16 +37,10 @@ export class VisitorRegisterComponent implements OnInit {
         checkInTime:this.checkInTime
     }
 
-    console.log(visitor.firstName + visitor.lastName + visitor.phoneNumber + visitor.email + 
-      visitor.checkInTime);
+    console.log(`${visitor.firstName}, ${visitor.lastName}, ${visitor.phoneNumber}, ${visitor.email},
+     ${visitor.checkInTime}`);
 
-
-   //this.visitorService.setVisitor(visitor);
-   console.log("======register:" + visitor.firstName);
-
-  //  this.ngZone.run(() => {
-  //   this.router.navigateByUrl('/facebook-analysis');
-  // })
+     this.visitorService.setVisitor(visitor);
 
    this.router.navigateByUrl('confirm');
   }
