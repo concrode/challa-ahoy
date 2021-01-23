@@ -7,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VisitorRegisterComponent implements OnInit {
 
-  constructor() { }
+  checkInTime: Date = new Date();
+
+  constructor() { 
+    setInterval(() => {
+      this.checkInTime = new Date();
+    }, 1);
+  }
 
   ngOnInit(): void {
   }
