@@ -3,4 +3,5 @@ export class Visitor {
     lastName:string;
     email:string;
     phoneNumber:string;
+    checkInTime:Date;
 }

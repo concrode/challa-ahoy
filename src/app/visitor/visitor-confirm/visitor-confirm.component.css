@@ -43,6 +43,17 @@
 }
 
 
+.button {
+    width: 120px;
+    height: 40px;
+    opacity: 1;
+    border: none;
+    border-radius:15px;
+    text-align: center;
+    background-color: #13E6C6;
+}
+
+
 #buttons {
     margin-top:20px;
     clear: both;

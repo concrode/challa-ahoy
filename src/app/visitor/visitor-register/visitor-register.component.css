@@ -50,10 +50,20 @@
     font: normal normal normal 20px/24px Novecento wide;  
 }
 
+.button {
+    width: 120px;
+    height: 40px;
+    opacity: 1;
+    border: none;
+    border-radius:15px;
+    text-align: center;
+    background-color: #13E6C6;
+}
+
+
 #logo {
     margin-top:120px;
 	color:#ffffff;
-    /*background:#35424a;*/
 }
 
 #check-in-terms {
