@@ -11,6 +11,7 @@ import { VisitorSubmitComponent } from './visitor/visitor-submit/visitor-submit.
 import { HeaderComponent } from './admin/header/header.component';
 import { LoginComponent } from './admin/login/login.component';
 import { VisitorDataComponent } from './admin/visitor-data/visitor-data.component';
+import { AgGridModule } from 'ag-grid-angular';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { VisitorDataComponent } from './admin/visitor-data/visitor-data.componen
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AgGridModule.withComponents()
   ],
   providers: [],
   bootstrap: [AppComponent]
