@@ -22,6 +22,8 @@ export class AuthService {
   }
 
   logoutUser() {
+    this.data = '0';
+
     localStorage.removeItem('token')
     this._router.navigate(['/login'])
   }
@@ -30,7 +32,18 @@ export class AuthService {
     return localStorage.getItem('token')
   }
 
+  data:string;
   loggedIn() {
-    return !!localStorage.getItem('token')    
+    console.log("loggedIn():" + this.data);
+    if (this.data == '1') {
+      return true;
+    }  
+    //return !!localStorage.getItem('token')    
   }
+
+  setData(data){
+    this.data = data;
+  }
+
+
 }

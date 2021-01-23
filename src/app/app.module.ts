@@ -12,6 +12,7 @@ import { HeaderComponent } from './admin/header/header.component';
 import { LoginComponent } from './admin/login/login.component';
 import { VisitorDataComponent } from './admin/visitor-data/visitor-data.component';
 import { AgGridModule } from 'ag-grid-angular';
+import { ReportComponent } from './admin/report/report.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AgGridModule } from 'ag-grid-angular';
     VisitorSubmitComponent,
     HeaderComponent,
     LoginComponent,
-    VisitorDataComponent
+    VisitorDataComponent,
+    ReportComponent
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,7 @@ import {VisitorConfirmComponent} from './visitor/visitor-confirm/visitor-confirm
 import {VisitorSubmitComponent} from './visitor/visitor-submit/visitor-submit.component';
 import { LoginComponent } from './admin/login/login.component';
 import { VisitorDataComponent} from './admin/visitor-data/visitor-data.component';
+import {ReportComponent } from './admin/report/report.component';
 
 
 
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path: 'confirm', component: VisitorConfirmComponent },
   {path: 'submit', component: VisitorSubmitComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'visitorData', component: VisitorDataComponent}
+  {path: 'visitorData', component: VisitorDataComponent},
+  {path: 'report', component: ReportComponent}
 ];
 
 @NgModule({

@@ -40,9 +40,9 @@ export class VisitorRegisterComponent implements OnInit {
     console.log(`${visitor.firstName}, ${visitor.lastName}, ${visitor.phoneNumber}, ${visitor.email},
      ${visitor.checkInTime}`);
 
-     this.visitorService.setVisitor(visitor);
+    this.visitorService.setVisitor(visitor);
 
-   this.router.navigateByUrl('confirm');
+    this.router.navigateByUrl('confirm');
   }
 
 }

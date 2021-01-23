@@ -8,12 +8,11 @@
         <span class="navbar-toggler-icon"></span>
       </button>
   
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse">
       <ul class="navbar-nav" >
-          <!--<a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>-->
-          <!--           <a class="nav-link" *ngIf="!_authService.loggedIn()" routerLink="/login" routerLinkActive="active">Login</a>
-              <a class="nav-link" *ngIf="!_authService.loggedIn()" routerLink="/register" routerLinkActive="active">Register</a>
-          <a class="nav-link" style="cursor:pointer" *ngIf="_authService.loggedIn()" (click)="_authService.logoutUser()">Logout</a>         -->
+          <a class="nav-link" *ngIf="authService.loggedIn()" routerLink="/visitorData" routerLinkActive="active">Visitor Data</a>
+          <a class="nav-link" *ngIf="authService.loggedIn()" routerLink="/report" routerLinkActive="active">Report</a>
+          <a class="nav-link" style="cursor:pointer" *ngIf="authService.loggedIn()" (click)="authService.logoutUser()">Logout</a>
       </ul> 
     </div>
   </nav>    
