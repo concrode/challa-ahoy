@@ -1,0 +1,36 @@
+/*global*/
+.container {
+	width:80%; 
+	margin:auto; 
+    overflow: hidden;
+    /**background:burlywood;*/
+    vertical-align:middle;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+/* End global */
+
+.background {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    background-image: url(../../../assets/images/visitor-background.png);
+}
+
+#logo {
+    margin-top:120px;
+	color:#ffffff;
+    /*background:#35424a;*/
+}
+
+#check-in-terms {
+    text-align: center;
+    font: normal normal 600 25px/30px Novecento wide;
+    color: #FFFFFF;
+}
