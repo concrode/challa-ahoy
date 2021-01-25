@@ -18,19 +18,23 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser () {
-    const loginUserData = {
+    const user = {
       username:this.username,
       password:this.password
     }
 
-    console.log(`${loginUserData.username} + ${loginUserData.password} `);
+    console.log(`${user.username} + ${user.password} `);
 
-    if (loginUserData.username === 'demo' && loginUserData.password === 'demo') {
-      console.log("equal")
-      this.authService.setData(1);
-
-      this.router.navigateByUrl('visitorData');
-    }
+    this.authService.login(user).subscribe(
+      response => {
+        console.log("Login Success:" + response);
+        localStorage.setItem('token', response.token);
+        this.router.navigateByUrl('visitorData');
+      },
+      err => {
+        console.log("Login Error:" + err);
+      }
+    )
   }
 
 }

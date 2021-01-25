@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/shared/auth.service';
 import { VisitorService } from '../../shared/visitor.service';
 
 @Component({
@@ -14,13 +15,16 @@ export class VisitorRegisterComponent implements OnInit {
   phoneNumber:string;
   email:string
 
-  constructor(private router: Router, private visitorService: VisitorService ) { 
+  constructor(private router: Router, 
+              private visitorService: VisitorService,
+              private authService: AuthService) { 
     setInterval(() => {
       this.checkinTime = new Date();
     }, 1);
   }
 
   ngOnInit(): void {
+    this.authService.clearToken();
   }
 
   onSubmit() {

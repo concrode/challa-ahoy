@@ -1,49 +1,42 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
-import { Router } from '@angular/router'
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'content-type': 'application/json'
+  })
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
-  private _registerUrl = "http://localhost:8080/api/register";
-  private _loginUrl = "http://localhost:8080/api/login";
+  AUTH_API:string = 'http://localhost:8080/auth/';
 
   constructor(private http: HttpClient,
-              private _router: Router) { }
-
-  registerUser(user) {
-    return this.http.post<any>(this._registerUrl, user)
-  }
-
-  loginUser(user) {
-    return this.http.post<any>(this._loginUrl, user)
-  }
+              private router: Router) {}
 
   logoutUser() {
-    this.data = '0';
+    this.clearToken();
+    this.router.navigate(['/login']);
+  }
 
-    localStorage.removeItem('token')
-    this._router.navigate(['/login'])
+  clearToken() {
+    localStorage.removeItem('token');
   }
 
   getToken() {
     return localStorage.getItem('token')
   }
 
-  data:string;
   loggedIn() {
-    console.log("loggedIn():" + this.data);
-    if (this.data == '1') {
-      return true;
-    }  
-    //return !!localStorage.getItem('token')    
+    return !!localStorage.getItem('token')    
   }
 
-  setData(data){
-    this.data = data;
+  login(user): Observable<any> {
+    return this.http.post(this.AUTH_API + 'login', user, httpOptions);
   }
-
 
 }

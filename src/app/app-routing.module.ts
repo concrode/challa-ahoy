@@ -6,16 +6,36 @@ import {VisitorSubmitComponent} from './visitor/visitor-submit/visitor-submit.co
 import { LoginComponent } from './admin/login/login.component';
 import { VisitorDataComponent} from './admin/visitor-data/visitor-data.component';
 import {ReportComponent } from './admin/report/report.component';
-
+import { AuthGuard } from './auth.guard';
 
 
 const routes: Routes = [
-  {path: '', component: VisitorRegisterComponent },
-  {path: 'confirm', component: VisitorConfirmComponent },
-  {path: 'submit', component: VisitorSubmitComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'visitorData', component: VisitorDataComponent},
-  {path: 'report', component: ReportComponent}
+  {
+    path: '', 
+    component: VisitorRegisterComponent 
+  },
+  {
+    path: 'confirm', 
+    component: VisitorConfirmComponent 
+  },
+  {
+    path: 'submit', 
+    component: VisitorSubmitComponent
+  },
+  {
+    path: 'login', 
+    component: LoginComponent
+  },
+  {
+    path: 'visitorData', 
+    component: VisitorDataComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'report', 
+    component: ReportComponent,
+    canActivate: [AuthGuard]
+  }
 ];
 
 @NgModule({

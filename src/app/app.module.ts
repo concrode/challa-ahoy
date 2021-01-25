@@ -13,6 +13,8 @@ import { LoginComponent } from './admin/login/login.component';
 import { VisitorDataComponent } from './admin/visitor-data/visitor-data.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { ReportComponent } from './admin/report/report.component';
+import { AuthGuard } from '../app/auth.guard';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +34,7 @@ import { ReportComponent } from './admin/report/report.component';
     FormsModule,
     AgGridModule.withComponents()
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

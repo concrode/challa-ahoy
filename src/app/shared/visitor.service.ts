@@ -32,8 +32,13 @@ export class VisitorService {
     return this.http.post(this.VISITOR_API + 'register', visitor, httpOptions);
   }
 
-  getAllVisitosData(): Observable<Visitor[]> {
-    return this.http.get<Visitor[]>(this.VISITOR_API + 'all');
+  getAllVisitorsData(): Observable<Visitor[]> {
+    return this.http.get<Visitor[]>(this.VISITOR_API + 'all', {
+      headers: new HttpHeaders()
+        .set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+        .set('content-type', 'application/json')
+      }
+    )
   }
 
 }
