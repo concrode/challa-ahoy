@@ -37,7 +37,7 @@
                 </tr>
                 <tr class="visitor-row">
                     <td><label class="form-prompt">Check In Time:</label></td>
-                    <td><label class="form-prompt">{{ visitor.checkInTime | date:'dd/MM/yyyy HH:mm:ss' }}</label></td>
+                    <td><label class="form-prompt">{{ visitor.checkinTime | date:'dd/MM/yyyy HH:mm:ss' }}</label></td>
                 </tr>
             </table>
         </div>
@@ -49,10 +49,9 @@
                 <a routerLink=""><input type="submit" value="BACK" class="button"></a>
             </div>
             <div class="nextButton">
-                <a routerLink="/submit"><input type="submit" value="SUBMIT" class="button"></a>
+                <input type="submit" value="SUBMIT" class="button" (click)="onSubmit()">
             </div>
         </div>
-
     </section>
 
 </div>
