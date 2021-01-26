@@ -15,7 +15,6 @@ export class ReportComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
   onSubmit() { 
     this.visitorService.getAllVisitorsData().subscribe (
       data => {
@@ -23,22 +22,5 @@ export class ReportComponent implements OnInit {
         saveAs(file, 'report.json');
       }
     )
-
-
-
-  //   this._http.get(url, {  responseType: 'blob' as 'json' }).subscribe((res) => {
-  //     var file = new Blob([res], { type: 'application/pdf' });            
-  //     var fileURL = URL.createObjectURL(file);
-  //     window.open(fileURL);
-  // }
-
-
-      //const pdfUrl = './assets/sample.pdf';
-      //const pdfName = 'your_pdf_file';
-      // console.log('download');
-      // //const blob = new Blob(['Hello, world!'], { type: 'text/plain'});
-      // const blob = new Blob([d], { type: 'application/pdf');
-
-      // saveAs(blob, 'd.txt');
-    }
+  }
 }

@@ -17,7 +17,6 @@ export class VisitorDataComponent implements OnInit {
       data => {
         //console.log(JSON.stringify(data));
         this.rowData = data;
-        //data.map(data =>  console.log("All visitors:" + data.toString()))
       }
     )
   }
@@ -28,14 +27,5 @@ export class VisitorDataComponent implements OnInit {
     { headerName: 'PhoneName', field: 'phoneNumber', sortable: true, filter: true },
     { headerName: 'Email', field: 'email', sortable: true, filter: true },
     { headerName: 'CheckinTime', field: 'checkinTime',sortable: true, filter: true, width: 300 }
-];
-
-// rowData = [
-//     { id: '1', FirstName: 'Chris', LastName: 'Chen', PhoneNumber: '05532323', Email: 'ch@gmail.com', CheckInTime: '02/Jan/2020 15:43:14' },
-//     { id: '2', FirstName: 'Jack', LastName: 'Chen', PhoneNumber: '05532323', Email: 'ch@gmail.com', CheckInTime: '03/Jan/2020 11:43:14' },
-//     { id: '3', FirstName: 'May', LastName: 'Chen', PhoneNumber: '055334323', Email: 'ch@gmail.com', CheckInTime: '03/Jan/2020 12:43:14' },
-//     { id: '4', FirstName: 'Tony', LastName: 'Chen', PhoneNumber: '05534323', Email: 'ch@gmail.com', CheckInTime: '04/Jan/2020 5:43:14' },
-//     { id: '5', FirstName: 'Tom', LastName: 'Chen', PhoneNumber: '02232323', Email: 'ch@gmail.com', CheckInTime: '09/Jan/2020 10:43:14' },
-// ];
-
+  ];
 }

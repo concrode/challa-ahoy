@@ -32,6 +32,12 @@ export class VisitorRegisterComponent implements OnInit {
     this.authService.clearToken();
   }
 
+
+  /**
+   * Valid function needs to be improved
+   * 
+   * @param firstName 
+   */
   onChangeFirstName(firstName) {
     if (/^[a-zA-Z]+$/.test(firstName) ? true : false) {
       this.showFirstNamePrompt = false;
