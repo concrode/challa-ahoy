@@ -41,4 +41,14 @@ export class VisitorService {
     )
   }
 
+  getAllVisitorsData2(): Observable<any> {
+    return this.http.get(this.VISITOR_API + 'all', {
+      headers: new HttpHeaders()
+        .set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+        .set('content-type', 'application/json'),
+        responseType: 'blob', observe: 'response'
+      }
+    )
+  }
+
 }

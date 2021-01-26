@@ -23,11 +23,11 @@ export class VisitorDataComponent implements OnInit {
   }
 
   columnDefs = [
-    { field: 'firstName' },
-    { field: 'lastName' },
-    { field: 'phoneNumber' },
-    { field: 'email' },
-    { field: 'checkinTime' }
+    { headerName: 'FirstName', field: 'firstName', sortable: true, filter: true},
+    { headerName: 'LastName', field: 'lastName', sortable: true, filter: true},
+    { headerName: 'PhoneName', field: 'phoneNumber', sortable: true, filter: true },
+    { headerName: 'Email', field: 'email', sortable: true, filter: true },
+    { headerName: 'CheckinTime', field: 'checkinTime',sortable: true, filter: true, width: 300 }
 ];
 
 // rowData = [

@@ -11,7 +11,8 @@
                 <td width="100"> <input type="text" type="date"></td>
                 <td width="100" style="text-align: right;">To</td>
                 <td width="100"><input type="text" type="date"></td>
-                <td style="padding-left: 20px;"><input type="submit" value="Run" class="button"></td>
+                <!-- <td style="padding-left: 20px;"><a [href]="fileUrl" (click)=download()>DownloadFile</a></td> -->
+                <td style="padding-left: 20px;"><input (click)="onSubmit()" type="submit" value="Download" class="button"></td>
             </tr>
           </div>
       </div>

@@ -25,19 +25,23 @@
             <table style="text-align: center; ">
                 <tr>
                     <td><label class="form-prompt">First Name</label></td>
-                    <td><input type="text" name="firstName" [(ngModel)]="firstName" placeholder="first name..." required></td>
+                    <td><input type="text" name="firstName" (ngModelChange)='onChangeFirstName($event)'[(ngModel)]="firstName" placeholder="first name..." required></td>
+                    <td><label class="form-prompt" *ngIf="showFirstNamePrompt">Invalid Name</label>
                 </tr>
                 <tr>
                     <td><label class="form-prompt">Last Name</label></td>
-                    <td><input type="text" name="lastname" [(ngModel)]="lastName" placeholder="last name..." required></td>
+                    <td><input type="text" name="lastname" (ngModelChange)='onChangeLastName($event)' [(ngModel)]="lastName" placeholder="last name..." required></td>
+                    <td><label class="form-prompt" *ngIf="showLastNamePrompt">Invalid Name</label>
                 </tr>
                 <tr>
                     <td><label class="form-prompt">Phone Number</label></td>
-                    <td><input type="text" name="phoneNumber" [(ngModel)]="phoneNumber" placeholder="phone number..." required></td>
+                    <td><input type="text" name="phoneNumber" (ngModelChange)='onChangePhoneNumber($event)'  [(ngModel)]="phoneNumber" placeholder="phone number..." required></td>
+                    <td><label class="form-prompt" *ngIf="showPhoneNumberPrompt">Invalid Phone Number</label>
                 </tr>
                 <tr>
                     <td><label class="form-prompt">Email Address</label></td>
-                    <td><input type="text" name="email" [(ngModel)]="email" placeholder="email address..." required></td>
+                    <td><input type="text" name="email" [(ngModel)]="email" (ngModelChange)='onChangeEmail($event)' placeholder="email address..." required></td>
+                    <td><label class="form-prompt" *ngIf="showEmailPrompt">Invalid Email</label>
                 </tr>
                 <tr style="height: 80px;">
                     <td><label class="form-prompt">Check In Time</label></td>
